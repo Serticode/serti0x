@@ -20,6 +20,7 @@ dependencies:
   #! ALL UTILS
   intl: ^0.19.0
   flutter_screenutil: ^5.8.3
+  flutter_svg_provider: ^1.0.7
 
   #! ANIMATIONS
   flutter_animate: ^4.5.0
@@ -39,6 +40,7 @@ flutter:
 
   assets:
     - assets/icons/
+    - assets/images/
     - .env
 
   fonts:

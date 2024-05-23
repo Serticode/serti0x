@@ -10,6 +10,7 @@ import 'package:serti0x/frontend/utilities/app_extensions.dart';
 
 class Footer extends ConsumerWidget {
   const Footer({super.key});
+  static const appStrings = AppStrings.instance;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -17,7 +18,7 @@ class Footer extends ConsumerWidget {
 
     return Row(
       children: [
-        AppStrings.instance.developerName.txt(
+        appStrings.developerName.txt(
           context: context,
           fontSize: 18.0,
         ),
@@ -33,8 +34,8 @@ class Footer extends ConsumerWidget {
         //!
         SvgPicture.asset(
           themeBrightness == Brightness.light
-              ? AppStrings.instance.moon.svg
-              : AppStrings.instance.sun.svg,
+              ? appStrings.moon.svg
+              : appStrings.sun.svg,
           color: themeBrightness == Brightness.light
               ? null
               : AppColours.instance.white,

@@ -10,10 +10,11 @@ import 'package:serti0x/frontend/utilities/app_extensions.dart';
 
 class Header extends ConsumerWidget {
   const Header({super.key});
+  static const appStrings = AppStrings.instance;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeBrightness = ref.watch(themeNotifierProvider);
+    final themeBrightness = ref.watch(themeNotifierProvider).brightness;
 
     return Row(
       children: [
@@ -32,15 +33,15 @@ class Header extends ConsumerWidget {
           backgroundColor: Colors.transparent,
           child: CustomPaint(
             painter: BrokenCirclePainter(
-              paintColour: themeBrightness.brightness == Brightness.light
+              paintColour: themeBrightness == Brightness.light
                   ? AppColours.instance.blue
                   : AppColours.instance.peach,
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: SvgPicture.asset(
-                AppStrings.instance.codeLogo.svg,
-                color: themeBrightness.brightness == Brightness.light
+                appStrings.codeLogo.svg,
+                color: themeBrightness == Brightness.light
                     ? null
                     : AppColours.instance.white,
               ).fadeInFromBottom(),
@@ -51,8 +52,8 @@ class Header extends ConsumerWidget {
         const Spacer(),
 
         SvgPicture.asset(
-          AppStrings.instance.menuIcon.svg,
-          color: themeBrightness.brightness == Brightness.light
+          appStrings.menuIcon.svg,
+          color: themeBrightness == Brightness.light
               ? null
               : AppColours.instance.white,
         ),

@@ -6,6 +6,7 @@ import 'fade_transition.dart';
 class AppTheme {
   AppTheme._privateConstructor();
   static AppTheme instance = AppTheme._privateConstructor();
+  static const appStrings = AppStrings.instance;
 
   //!
   //!
@@ -23,7 +24,7 @@ class AppTheme {
     scaffoldBackgroundColor: AppColours.instance.black,
 
     //! FONT FAMILY
-    fontFamily: AppStrings.instance.fontFamily,
+    fontFamily: appStrings.fontFamily,
 
     //!
     useMaterial3: false,
@@ -45,7 +46,7 @@ class AppTheme {
     scaffoldBackgroundColor: AppColours.instance.white,
 
     //! FONT FAMILY
-    fontFamily: AppStrings.instance.fontFamily,
+    fontFamily: appStrings.fontFamily,
 
     //!
     useMaterial3: false,
