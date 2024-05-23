@@ -212,6 +212,7 @@ extension StyledTextExtension on String {
     TextAlign? textAlign,
     int? maxLines,
     double? height,
+    TextStyle? textStyle,
   }) {
     return Text(
       this,
@@ -219,21 +220,22 @@ extension StyledTextExtension on String {
       textAlign: textAlign,
       maxLines: maxLines,
       softWrap: true,
-      style: TextStyle(
-        fontSize: fontSize ?? 10.0,
-        height: height,
-        color: color ??
-            (Theme.of(context).brightness == Brightness.dark
-                ? AppColours.instance.grey300
-                : AppColours.instance.grey700),
-        fontWeight: fontWeight ??
-            (Theme.of(context).brightness == Brightness.dark
-                ? FontWeight.w500
-                : FontWeight.w600),
-        fontFamily: AppStrings.instance.fontFamily,
-        fontStyle: fontStyle,
-        decoration: decoration,
-      ),
+      style: textStyle ??
+          TextStyle(
+            fontSize: fontSize ?? 10.0,
+            height: height,
+            color: color ??
+                (Theme.of(context).brightness == Brightness.dark
+                    ? AppColours.instance.grey300
+                    : AppColours.instance.grey700),
+            fontWeight: fontWeight ??
+                (Theme.of(context).brightness == Brightness.dark
+                    ? FontWeight.w500
+                    : FontWeight.w600),
+            fontFamily: AppStrings.instance.fontFamily,
+            fontStyle: fontStyle,
+            decoration: decoration,
+          ),
     );
   }
 
