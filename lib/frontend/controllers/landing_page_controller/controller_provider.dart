@@ -4,7 +4,9 @@ import 'package:serti0x/frontend/controllers/landing_page_controller/controller_
 import 'package:serti0x/frontend/controllers/landing_page_controller/landing_page_controller.dart';
 
 final landingPageController = StateNotifierProvider<AppPagesNotifier, AppPages>(
-  (ref) => AppPagesNotifier(
-    AppPages.welcome,
-  ),
+  (ref) {
+    return AppPagesNotifier(
+      AppPages.welcome,
+    );
+  },
 );

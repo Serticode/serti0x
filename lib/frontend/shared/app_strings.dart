@@ -23,8 +23,9 @@ class AppStrings {
 
   //!
   //!
-  //! BACK DROPS
+  //! BACK DROPS AND IMAGES
   final String welcomePageBackdrop = "assets/images/welcomePageBackdrop.png";
+  final String myPhoto = "myPhoto";
 
   //!
   //!

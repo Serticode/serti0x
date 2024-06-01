@@ -107,6 +107,7 @@ extension PaddingExtension on Widget {
 extension ImagePath on String {
   String get png => "assets/images/$this.png";
   String get jpg => "assets/images/$this.jpg";
+  String get jpeg => "assets/images/$this.jpeg";
   String get gif => "assets/images/$this.gif";
   String get svg => "icons/$this.svg";
 }
@@ -394,6 +395,8 @@ extension InkWellExtension on Widget {
       borderRadius: borderRadius ?? BorderRadius.circular(12),
       splashColor: splashColor,
       highlightColor: highlightColor,
+      hoverColor: Colors.transparent,
+      splashFactory: NoSplash.splashFactory,
       child: this,
     );
   }

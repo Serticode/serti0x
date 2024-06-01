@@ -25,6 +25,7 @@ dependencies:
   #! ANIMATIONS
   flutter_animate: ^4.5.0
   flutter_svg: ^2.0.10+1
+  avatar_glow: ^3.0.1
 
 dev_dependencies:
   flutter_test:

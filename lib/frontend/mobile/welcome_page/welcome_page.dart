@@ -3,6 +3,7 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:serti0x/frontend/controllers/welcome_page_controller/controller_enum.dart';
 import 'package:serti0x/frontend/desktop/welcome_page/widgets/broken_circle.dart';
 import 'package:serti0x/frontend/desktop/welcome_page/widgets/greetings.dart';
 import 'package:serti0x/frontend/shared/app_colours.dart';
@@ -21,8 +22,9 @@ class WelcomePage extends ConsumerWidget {
         //!
         Row(
           crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Spacer(),
+
             //!
             CustomPaint(
               painter: WelcomePageBrokenCirclePainter(
@@ -56,49 +58,16 @@ class WelcomePage extends ConsumerWidget {
               ),
             ),
 
-            //31.0.sizedBoxWidth,
+            //!
+            21.0.sizedBoxHeight,
+
+            const Spacer(),
           ],
         ).alignBottomCenter(),
 
-        const Greeting(),
-      ],
-    );
-  }
-}
-
-/* 
- Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    150.0.sizedBoxHeight,
-            
-                    //!
-                    ...ActionButtons.values.map(
-                      (button) => "• ${button.pageName}"
-                          .txt(
-                            context: context,
-                            fontSize: 18,
-                          )
-                          .fadeInFromBottom(
-                            animationDuration: Duration(
-                              milliseconds:
-                                  300 * ActionButtons.values.indexOf(button),
-                            ),
-                          )
-                          .onTap(
-                        onTap: () async {
-                          "BUTTON TAPPED: ${button.pageName}".log();
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-             */
-
-        /* Positioned(
+        Positioned(
           bottom: 350,
-          left: 1150.0.w,
+          left: 900,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: ActionButtons.values
@@ -106,7 +75,7 @@ class WelcomePage extends ConsumerWidget {
                   (button) => "• ${button.pageName}"
                       .txt(
                         context: context,
-                        fontSize: 18,
+                        fontSize: 24,
                       )
                       .fadeInFromBottom(
                         animationDuration: Duration(
@@ -122,4 +91,10 @@ class WelcomePage extends ConsumerWidget {
                 )
                 .toList(),
           ),
-        ), */
+        ),
+
+        const Greeting(),
+      ],
+    );
+  }
+}

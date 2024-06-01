@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:serti0x/frontend/controllers/landing_page_controller/controller_enum.dart';
 import 'package:serti0x/frontend/controllers/landing_page_controller/controller_provider.dart';
-import 'package:serti0x/frontend/desktop/landing_page/footer/footer.dart';
-import 'package:serti0x/frontend/desktop/landing_page/header/header.dart';
 import 'package:serti0x/frontend/shared/app_strings.dart';
 import 'package:serti0x/frontend/theme/theme_state_and_provider.dart';
 
-class LandingPage extends ConsumerStatefulWidget {
-  const LandingPage({super.key});
+class MobileLandingPage extends ConsumerStatefulWidget {
+  const MobileLandingPage({super.key});
   static const appStrings = AppStrings.instance;
 
   @override
-  ConsumerState<LandingPage> createState() => _LandingPageState();
+  ConsumerState<MobileLandingPage> createState() => _LandingPageState();
 }
 
-class _LandingPageState extends ConsumerState<LandingPage>
+class _LandingPageState extends ConsumerState<MobileLandingPage>
     with TickerProviderStateMixin {
   //!
   @override
@@ -32,7 +29,8 @@ class _LandingPageState extends ConsumerState<LandingPage>
 
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        color: Colors.purple,
+        /* decoration: BoxDecoration(
           image: themeBrightness == Brightness.dark
               ? DecorationImage(
                   image: AssetImage(
@@ -42,8 +40,8 @@ class _LandingPageState extends ConsumerState<LandingPage>
                   filterQuality: FilterQuality.high,
                 )
               : null,
-        ),
-        child: Column(
+        ), */
+        /* child: Column(
           children: [
             //! HEADER
             const Header(),
@@ -61,7 +59,7 @@ class _LandingPageState extends ConsumerState<LandingPage>
             //! FOOTER
             const Footer(),
           ],
-        ),
+        ), */
       ),
     );
   }
