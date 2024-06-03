@@ -26,42 +26,29 @@ class _LandingPageState extends ConsumerState<LandingPage>
 
   @override
   Widget build(BuildContext context) {
-    final themeBrightness = ref.watch(themeNotifierProvider).brightness;
     final pageController =
         ref.watch(landingPageController.notifier).pageViewController;
 
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: themeBrightness == Brightness.dark
-              ? DecorationImage(
-                  image: AssetImage(
-                    LandingPage.appStrings.welcomePageBackdrop,
-                  ),
-                  fit: BoxFit.cover,
-                  filterQuality: FilterQuality.high,
-                )
-              : null,
-        ),
-        child: Column(
-          children: [
-            //! HEADER
-            const Header(),
+      body: Column(
+        children: [
+          //! HEADER
+          const Header(),
 
-            Expanded(
-              child: PageView.builder(
-                controller: pageController,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return AppPages.values.elementAt(index).screen;
-                },
-              ),
+          Expanded(
+            flex: 2,
+            child: PageView.builder(
+              controller: pageController,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return AppPages.values.elementAt(index).screen;
+              },
             ),
+          ),
 
-            //! FOOTER
-            const Footer(),
-          ],
-        ),
+          //! FOOTER
+          const Footer(),
+        ],
       ),
     );
   }

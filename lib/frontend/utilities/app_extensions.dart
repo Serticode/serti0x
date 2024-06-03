@@ -227,6 +227,8 @@ extension StyledTextExtension on String {
           TextStyle(
             fontSize: fontSize ?? 10.0,
             height: height,
+            wordSpacing: 4,
+            letterSpacing: 1.5,
             color: color ??
                 (Theme.of(context).brightness == Brightness.dark
                     ? AppColours.instance.grey300
@@ -261,6 +263,8 @@ extension StyledTextExtension on String {
       style: TextStyle(
         fontSize: 12.0,
         height: height,
+        wordSpacing: 4,
+        letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
                 ? AppColours.instance.grey300
@@ -295,6 +299,8 @@ extension StyledTextExtension on String {
       style: TextStyle(
         height: height,
         fontSize: 14.0,
+        wordSpacing: 4,
+        letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
                 ? AppColours.instance.grey300
@@ -328,6 +334,8 @@ extension StyledTextExtension on String {
       maxLines: maxLines,
       style: TextStyle(
         fontSize: 16.0,
+        wordSpacing: 4,
+        letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
                 ? AppColours.instance.grey300
@@ -361,6 +369,8 @@ extension StyledTextExtension on String {
       maxLines: maxLines,
       style: TextStyle(
         fontSize: 24.0,
+        wordSpacing: 4,
+        letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
                 ? AppColours.instance.grey300
@@ -387,9 +397,51 @@ extension InkWellExtension on Widget {
     BorderRadius? borderRadius,
     Color? splashColor = Colors.transparent,
     Color? highlightColor = Colors.transparent,
+    String? tooltipMessage,
+    BuildContext? context,
+    void Function({
+      required bool value,
+    })? onHover,
   }) {
     return InkWell(
       onTap: onTap,
+      onHover: (value) {
+        if (onHover != null) {
+          onHover(value: value);
+        }
+      },
+      /* (value) {
+        /* if (onHover != null) {
+          onHover(value: value);
+        } */
+
+        //onHover?.call(value: value);
+
+        if (tooltipMessage != null) {
+          final tooltip = Tooltip(
+            message: tooltipMessage,
+            child: const SizedBox.shrink(),
+          );
+
+          final overlay = OverlayEntry(
+            builder: (context) => Positioned(
+              top: 0,
+              left: 0,
+              child: Material(
+                color: Colors.transparent,
+                elevation: 40,
+                child: tooltip,
+              ),
+            ),
+          );
+
+          if (value && context != null) {
+            Overlay.of(context).insert(overlay);
+          } else {
+            overlay.remove();
+          }
+        }
+      }, */
       onDoubleTap: onDoubleTap,
       onLongPress: onLongPress,
       borderRadius: borderRadius ?? BorderRadius.circular(12),

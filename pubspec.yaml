@@ -49,3 +49,9 @@ flutter:
       fonts:
         - asset: assets/fonts/SpaceMono-Regular.ttf
         - asset: assets/fonts/SpaceMono-Italic.ttf
+    - family: Eudoxus Sans
+      fonts:
+        - asset: assets/fonts/EudoxusSans-Regular.ttf
+        - asset: assets/fonts/EudoxusSans-Medium.ttf
+        - asset: assets/fonts/EudoxusSans-Bold.ttf
+        - asset: assets/fonts/EudoxusSans-ExtraBold.ttf

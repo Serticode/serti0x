@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:serti0x/frontend/desktop/welcome_page/widgets/app_dash.dart';
 import 'package:serti0x/frontend/shared/app_colours.dart';
 import 'package:serti0x/frontend/shared/app_strings.dart';
 import 'package:serti0x/frontend/theme/theme_state_and_provider.dart';
@@ -13,6 +13,7 @@ class Greeting extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeBrightness = ref.watch(themeNotifierProvider).brightness;
+    const appColoursInstance = AppColours.instance;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,8 +22,11 @@ class Greeting extends ConsumerWidget {
             .txt(
               context: context,
               fontWeight: FontWeight.w800,
-              fontSize: 55,
+              fontSize: 65,
               height: 0.5,
+              color: themeBrightness == Brightness.dark
+                  ? appColoursInstance.peach
+                  : appColoursInstance.blue,
             )
             .fadeInFromBottom(),
 
@@ -31,7 +35,7 @@ class Greeting extends ConsumerWidget {
             .txt(
               context: context,
               fontWeight: FontWeight.w600,
-              fontSize: 35,
+              fontSize: 45,
             )
             .fadeInFromBottom(
               animationDuration: const Duration(
@@ -39,18 +43,12 @@ class Greeting extends ConsumerWidget {
               ),
             ),
 
-        42.0.sizedBoxHeight,
+        22.0.sizedBoxHeight,
 
         //!
         Row(
           children: [
-            Container(
-              width: 30.0.w,
-              height: 5.0,
-              color: themeBrightness == Brightness.dark
-                  ? AppColours.instance.peach
-                  : AppColours.instance.blue,
-            ),
+            const AppDash(),
 
             21.0.sizedBoxWidth,
 

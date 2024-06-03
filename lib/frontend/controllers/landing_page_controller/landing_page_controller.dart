@@ -11,7 +11,7 @@ class AppPagesNotifier extends StateNotifier<AppPages> {
   final PageController pageViewController = PageController(initialPage: 1);
   late TabController mainTabController;
 
-  initTabController({
+  void initTabController({
     required TickerProvider vsync,
   }) {
     mainTabController = TabController(

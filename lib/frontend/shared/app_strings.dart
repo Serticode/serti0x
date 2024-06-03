@@ -6,9 +6,11 @@ class AppStrings {
   final String appName = "Serti0x";
   final String developerName = "Serticode";
   final String nickName = "Adonis";
+  final String githubURL = "https://github.com/Serticode";
+  final String resumeURL = "https://github.com/Serticode";
 
   //! FONT FAMILY
-  final String fontFamily = "Space Mono";
+  final String fontFamily = "Eudoxus Sans";
 
   //! IN APP PUBLIC KEYS
   final String appThemeKey = "appThemeKey";
@@ -31,7 +33,7 @@ class AppStrings {
   //!
   //! REGULAR WORDS
   final String welcome = "Welcome";
-  final String fromSerticode = "from Serticode";
+  final String fromSerticode = "from  Serticode.";
   final String salutation =
-      "Hi👋🏽, I’m Samuel O. Akujor, \nyour Software Engineering craftsman \n– weaving digital wonders as a \nFullstack developer.";
+      "Hi👋🏽, I’m Samuel O. Akujor, \nyour Software Engineering craftsman \nweaving digital wonders as a \nFullstack developer.";
 }

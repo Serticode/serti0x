@@ -3,6 +3,9 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:serti0x/frontend/controllers/welcome_page_controller/controller_enum.dart';
+import 'package:serti0x/frontend/controllers/welcome_page_controller/controller_provider.dart';
+import 'package:serti0x/frontend/desktop/welcome_page/widgets/app_dash.dart';
 import 'package:serti0x/frontend/desktop/welcome_page/widgets/broken_circle.dart';
 import 'package:serti0x/frontend/desktop/welcome_page/widgets/greetings.dart';
 import 'package:serti0x/frontend/shared/app_colours.dart';
@@ -15,6 +18,7 @@ class WelcomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeBrightness = ref.watch(themeNotifierProvider).brightness;
+    const appColoursInstance = AppColours.instance;
 
     return Stack(
       children: [
@@ -26,28 +30,28 @@ class WelcomePage extends ConsumerWidget {
             //!
             CustomPaint(
               painter: WelcomePageBrokenCirclePainter(
-                paintColour: Colors.grey.shade800,
+                paintColour: Colors.grey.shade300,
               ),
               child: Padding(
                 padding: const EdgeInsets.all(32.0),
                 child: CircleAvatar(
                   radius: 230,
                   backgroundColor: themeBrightness == Brightness.dark
-                      ? AppColours.instance.white.withOpacity(0.1)
-                      : AppColours.instance.black.withOpacity(0.1),
+                      ? appColoursInstance.white.withOpacity(0.05)
+                      : appColoursInstance.black.withOpacity(0.05),
                   child: AvatarGlow(
                     glowRadiusFactor: 0.5,
                     glowCount: 1,
                     glowColor: themeBrightness == Brightness.light
-                        ? AppColours.instance.blue.withOpacity(0.2)
-                        : AppColours.instance.peach.withOpacity(0.2),
+                        ? appColoursInstance.blue.withOpacity(0.05)
+                        : appColoursInstance.peach.withOpacity(0.05),
                     child: Material(
                       elevation: 80.0,
                       shape: const CircleBorder(),
                       child: CircleAvatar(
                         backgroundColor: themeBrightness == Brightness.light
-                            ? AppColours.instance.blue.withOpacity(0.1)
-                            : AppColours.instance.peach.withOpacity(0.1),
+                            ? appColoursInstance.blue.withOpacity(0.05)
+                            : appColoursInstance.peach.withOpacity(0.05),
                         radius: 150.0,
                       ),
                     ),
@@ -56,7 +60,68 @@ class WelcomePage extends ConsumerWidget {
               ),
             ),
 
-            //31.0.sizedBoxWidth,
+            80.0.sizedBoxWidth,
+
+            //!
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                220.0.sizedBoxHeight,
+
+                //!
+                Padding(
+                  padding: const EdgeInsets.all(32.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: ActionButtons.values
+                        .map(
+                          (button) => Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                const AppDash(),
+
+                                //!
+                                "       ${button.pageName}".txt(
+                                  context: context,
+                                  fontSize: 18,
+                                )
+                              ],
+                            )
+                                .fadeInFromBottom(
+                              delay: const Duration(
+                                milliseconds: 800,
+                              ),
+                              animationDuration: Duration(
+                                milliseconds:
+                                    300 * ActionButtons.values.indexOf(button),
+                              ),
+                            )
+                                .onTap(
+                              onTap: () async {
+                                final index =
+                                    ActionButtons.values.indexOf(button);
+
+                                ref
+                                    .read(
+                                      welcomePageActionsProvider,
+                                    )
+                                    .onButtonPressed(
+                                      buttonIndex: index,
+                                      navigateToContactMe: () {
+                                        "NAVIGATE TO CONTACT ME PRESSED".log();
+                                      },
+                                    );
+                              },
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
+              ],
+            ),
           ],
         ).alignBottomCenter(),
 
@@ -65,61 +130,3 @@ class WelcomePage extends ConsumerWidget {
     );
   }
 }
-
-/* 
- Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    150.0.sizedBoxHeight,
-            
-                    //!
-                    ...ActionButtons.values.map(
-                      (button) => "• ${button.pageName}"
-                          .txt(
-                            context: context,
-                            fontSize: 18,
-                          )
-                          .fadeInFromBottom(
-                            animationDuration: Duration(
-                              milliseconds:
-                                  300 * ActionButtons.values.indexOf(button),
-                            ),
-                          )
-                          .onTap(
-                        onTap: () async {
-                          "BUTTON TAPPED: ${button.pageName}".log();
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-             */
-
-        /* Positioned(
-          bottom: 350,
-          left: 1150.0.w,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: ActionButtons.values
-                .map(
-                  (button) => "• ${button.pageName}"
-                      .txt(
-                        context: context,
-                        fontSize: 18,
-                      )
-                      .fadeInFromBottom(
-                        animationDuration: Duration(
-                          milliseconds:
-                              300 * ActionButtons.values.indexOf(button),
-                        ),
-                      )
-                      .onTap(
-                    onTap: () async {
-                      "BUTTON TAPPED: ${button.pageName}".log();
-                    },
-                  ),
-                )
-                .toList(),
-          ),
-        ), */
