@@ -5,7 +5,6 @@ import 'package:serti0x/frontend/controllers/landing_page_controller/controller_
 import 'package:serti0x/frontend/desktop/landing_page/footer/footer.dart';
 import 'package:serti0x/frontend/desktop/landing_page/header/header.dart';
 import 'package:serti0x/frontend/shared/app_strings.dart';
-import 'package:serti0x/frontend/theme/theme_state_and_provider.dart';
 
 class LandingPage extends ConsumerStatefulWidget {
   const LandingPage({super.key});
@@ -30,26 +29,21 @@ class _LandingPageState extends ConsumerState<LandingPage>
         ref.watch(landingPageController.notifier).pageViewController;
 
     return Scaffold(
-      body: Column(
-        children: [
-          //! HEADER
-          const Header(),
-
-          Expanded(
-            flex: 2,
-            child: PageView.builder(
-              controller: pageController,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return AppPages.values.elementAt(index).screen;
-              },
-            ),
-          ),
-
-          //! FOOTER
-          const Footer(),
-        ],
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(55),
+        child: Header(),
       ),
+
+      //!
+      body: PageView.builder(
+        controller: pageController,
+        physics: const NeverScrollableScrollPhysics(),
+        itemBuilder: (context, index) {
+          return AppPages.values.elementAt(index).screen;
+        },
+      ),
+
+      bottomNavigationBar: const Footer(),
     );
   }
 }

@@ -10,7 +10,7 @@ class CustomFadeTransitionBuilder extends PageTransitionsBuilder {
     Widget child,
   ) {
     return FadeTransition(
-      opacity: Tween<double>(begin: 0.4, end: 1.0).animate(animation),
+      opacity: Tween<double>(begin: 0.1, end: 1.0).animate(animation),
       child: child,
     );
   }

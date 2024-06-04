@@ -36,4 +36,7 @@ class AppStrings {
   final String fromSerticode = "from  Serticode.";
   final String salutation =
       "Hi👋🏽, I’m Samuel O. Akujor, \nyour Software Engineering craftsman \nweaving digital wonders as a \nFullstack developer.";
+  final String works = "Works.";
+  final String worksPageSalutation =
+      "First, solve the problem. \nThen, write the code - (John Johnson). \nA couple of things I've worked on. \nThe more you use, the more you love ❤️.";
 }

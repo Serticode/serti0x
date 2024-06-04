@@ -174,7 +174,7 @@ extension WidgetAnimation on Widget {
     AnimationController? controller,
   }) =>
       animate(
-        delay: delay ?? 300.ms,
+        delay: delay ?? 600.ms,
         controller: controller,
       )
           .move(

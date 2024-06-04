@@ -15,57 +15,59 @@ class Greeting extends ConsumerWidget {
     final themeBrightness = ref.watch(themeNotifierProvider).brightness;
     const appColoursInstance = AppColours.instance;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        appStrings.welcome
-            .txt(
-              context: context,
-              fontWeight: FontWeight.w800,
-              fontSize: 65,
-              height: 0.5,
-              color: themeBrightness == Brightness.dark
-                  ? appColoursInstance.peach
-                  : appColoursInstance.blue,
-            )
-            .fadeInFromBottom(),
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          appStrings.welcome
+              .txt(
+                context: context,
+                fontWeight: FontWeight.w800,
+                fontSize: 72,
+                color: themeBrightness == Brightness.dark
+                    ? appColoursInstance.peach
+                    : appColoursInstance.blue,
+              )
+              .fadeInFromBottom(),
 
-        //!
-        appStrings.fromSerticode
-            .txt(
-              context: context,
-              fontWeight: FontWeight.w600,
-              fontSize: 45,
-            )
-            .fadeInFromBottom(
-              animationDuration: const Duration(
-                milliseconds: 350,
-              ),
-            ),
-
-        22.0.sizedBoxHeight,
-
-        //!
-        Row(
-          children: [
-            const AppDash(),
-
-            21.0.sizedBoxWidth,
-
-            //!
-            appStrings.salutation
-                .txt(
-                  context: context,
-                  fontSize: 18,
-                )
-                .fadeInFromBottom(
-                  animationDuration: const Duration(
-                    milliseconds: 400,
-                  ),
+          //!
+          appStrings.fromSerticode
+              .txt(
+                context: context,
+                fontWeight: FontWeight.w600,
+                fontSize: 52,
+              )
+              .fadeInFromBottom(
+                animationDuration: const Duration(
+                  milliseconds: 350,
                 ),
-          ],
-        ),
-      ],
-    ).generalPadding;
+              ),
+
+          22.0.sizedBoxHeight,
+
+          //!
+          Row(
+            children: [
+              const AppDash(),
+
+              21.0.sizedBoxWidth,
+
+              //!
+              appStrings.salutation
+                  .txt(
+                    context: context,
+                    fontSize: 18,
+                  )
+                  .fadeInFromBottom(
+                    animationDuration: const Duration(
+                      milliseconds: 400,
+                    ),
+                  ),
+            ],
+          ),
+        ],
+      ).generalPadding,
+    );
   }
 }
