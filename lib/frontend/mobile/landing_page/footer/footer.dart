@@ -15,25 +15,18 @@ class Footer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeBrightness = ref.watch(themeNotifierProvider).brightness;
-    const appColoursInstance = AppColours.instance;
 
     return Row(
       children: [
         appStrings.developerName.txt(
           context: context,
           fontSize: 18.0,
-          color: themeBrightness == Brightness.dark
-              ? appColoursInstance.peach
-              : appColoursInstance.blue,
         ),
 
         //!
         const Spacer(),
 
-        const Expanded(
-          flex: 2,
-          child: LandingPageControls(),
-        ),
+        const Expanded(child: LandingPageControls()),
 
         //!
         const Spacer(),

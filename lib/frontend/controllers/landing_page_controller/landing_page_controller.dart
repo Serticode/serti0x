@@ -4,13 +4,27 @@ import 'package:serti0x/frontend/controllers/landing_page_controller/controller_
 
 //!
 class AppPagesNotifier extends StateNotifier<AppPages> {
-  AppPagesNotifier(super.initialState);
+  AppPagesNotifier(
+    super.initialState,
+  );
 
-  final PageController pageViewController = PageController();
+  final PageController pageViewController = PageController(initialPage: 2);
+  late TabController mainTabController;
 
-  void setPage({
-    required AppPages currentPage,
+  void initTabController({
+    required TickerProvider vsync,
   }) {
-    state = currentPage;
+    mainTabController = TabController(
+      length: 3,
+      vsync: vsync,
+      initialIndex: 2,
+    );
+  }
+
+  @override
+  void dispose() {
+    pageViewController.dispose();
+    mainTabController.dispose();
+    super.dispose();
   }
 }

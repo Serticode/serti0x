@@ -50,7 +50,14 @@ class Header extends ConsumerWidget {
         ),
 
         const Spacer(),
+
+        /* SvgPicture.asset(
+          appStrings.menuIcon.svg,
+          color: themeBrightness == Brightness.light
+              ? null
+              : AppColours.instance.white,
+        ), */
       ],
-    );
+    ).generalPadding;
   }
 }
