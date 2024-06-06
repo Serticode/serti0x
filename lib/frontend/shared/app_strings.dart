@@ -22,6 +22,7 @@ class AppStrings {
   final String sun = "sun";
   final String codeLogo = "codeLogo";
   final String menuIcon = "menuIcon";
+  final String gridIcon = "gridIcon";
 
   //!
   //!
@@ -39,4 +40,7 @@ class AppStrings {
   final String works = "Works.";
   final String worksPageSalutation =
       "First, solve the problem. \nThen, write the code - (John Johnson). \nA couple of things I've worked on. \nThe more you use, the more you love ❤️.";
+  final String articles = "Articles.";
+  final String articlesRider =
+      "Here in goes all articles I've written, \nI hope you learn something. 🙈";
 }

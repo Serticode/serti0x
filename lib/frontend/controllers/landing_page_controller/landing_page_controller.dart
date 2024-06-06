@@ -8,7 +8,7 @@ class AppPagesNotifier extends StateNotifier<AppPages> {
     super.initialState,
   );
 
-  final PageController pageViewController = PageController(initialPage: 2);
+  final PageController pageViewController = PageController();
   late TabController mainTabController;
 
   void initTabController({
@@ -17,7 +17,7 @@ class AppPagesNotifier extends StateNotifier<AppPages> {
     mainTabController = TabController(
       length: 3,
       vsync: vsync,
-      initialIndex: 2,
+      //initialIndex: 0,
     );
   }
 
