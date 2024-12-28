@@ -14,7 +14,7 @@ class ThemeNotifier extends StateNotifier<ThemeData> {
     _loadTheme();
   }
 
-  static final String _appThemeKey = AppStrings.instance.appThemeKey;
+  static final String _appThemeKey = appStrings.appThemeKey;
 
   Future<void> toggleTheme() async {
     if (state.brightness == Brightness.dark) {

@@ -8,8 +8,6 @@ import "package:intl/intl.dart";
 import "package:serti0x/frontend/shared/app_colours.dart";
 import "package:serti0x/frontend/shared/app_strings.dart";
 
-const appStrings = AppStrings.instance;
-
 //!
 //! LOG EXTENSION - THIS HELPS TO CALL A .log() ON ANY OBJECT
 //! checks if the app in is debug mode first.

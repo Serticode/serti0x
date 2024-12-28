@@ -1,6 +1,9 @@
+final appStrings = AppStrings();
+
 class AppStrings {
-  const AppStrings._privateConstructor();
-  static const AppStrings instance = AppStrings._privateConstructor();
+  factory AppStrings() => singleInstance;
+  AppStrings._internal();
+  static final AppStrings singleInstance = AppStrings._internal();
 
   //! FOR THE DEV
   final String appName = "Serti0x";

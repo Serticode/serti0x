@@ -6,7 +6,6 @@ import 'fade_transition.dart';
 class AppTheme {
   AppTheme._privateConstructor();
   static AppTheme instance = AppTheme._privateConstructor();
-  static const appStrings = AppStrings.instance;
 
   //!
   //!
