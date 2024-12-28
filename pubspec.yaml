@@ -25,6 +25,7 @@ dependencies:
   #! ANIMATIONS
   flutter_animate: ^4.5.0
   flutter_svg: ^2.0.10+1
+  avatar_glow: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -48,3 +49,9 @@ flutter:
       fonts:
         - asset: assets/fonts/SpaceMono-Regular.ttf
         - asset: assets/fonts/SpaceMono-Italic.ttf
+    - family: Eudoxus Sans
+      fonts:
+        - asset: assets/fonts/EudoxusSans-Regular.ttf
+        - asset: assets/fonts/EudoxusSans-Medium.ttf
+        - asset: assets/fonts/EudoxusSans-Bold.ttf
+        - asset: assets/fonts/EudoxusSans-ExtraBold.ttf
