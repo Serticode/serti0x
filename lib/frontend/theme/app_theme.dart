@@ -21,7 +21,7 @@ class AppTheme {
     }),
 
     //!
-    scaffoldBackgroundColor: AppColours.instance.black,
+    scaffoldBackgroundColor: appColours.black,
 
     //! FONT FAMILY
     fontFamily: appStrings.fontFamily,
@@ -43,7 +43,7 @@ class AppTheme {
     }),
 
     //!
-    scaffoldBackgroundColor: AppColours.instance.white,
+    scaffoldBackgroundColor: appColours.white,
 
     //! FONT FAMILY
     fontFamily: appStrings.fontFamily,

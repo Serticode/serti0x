@@ -231,8 +231,8 @@ extension StyledTextExtension on String {
             letterSpacing: 1.5,
             color: color ??
                 (Theme.of(context).brightness == Brightness.dark
-                    ? AppColours.instance.grey300
-                    : AppColours.instance.grey700),
+                    ? appColours.grey300
+                    : appColours.grey700),
             fontWeight: fontWeight ??
                 (Theme.of(context).brightness == Brightness.dark
                     ? FontWeight.w500
@@ -267,8 +267,8 @@ extension StyledTextExtension on String {
         letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
-                ? AppColours.instance.grey300
-                : AppColours.instance.grey700),
+                ? appColours.grey300
+                : appColours.grey700),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
                 ? FontWeight.w500
@@ -303,8 +303,8 @@ extension StyledTextExtension on String {
         letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
-                ? AppColours.instance.grey300
-                : AppColours.instance.grey700),
+                ? appColours.grey300
+                : appColours.grey700),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
                 ? FontWeight.w500
@@ -338,8 +338,8 @@ extension StyledTextExtension on String {
         letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
-                ? AppColours.instance.grey300
-                : AppColours.instance.grey700),
+                ? appColours.grey300
+                : appColours.grey700),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
                 ? FontWeight.w500
@@ -373,8 +373,8 @@ extension StyledTextExtension on String {
         letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
-                ? AppColours.instance.grey300
-                : AppColours.instance.grey700),
+                ? appColours.grey300
+                : appColours.grey700),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
                 ? FontWeight.w500

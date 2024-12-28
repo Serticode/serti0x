@@ -2,22 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:serti0x/frontend/shared/app_strings.dart';
 
-class LandingPage extends ConsumerStatefulWidget {
-  const LandingPage({super.key});
+class MobileLandingPage extends ConsumerStatefulWidget {
+  const MobileLandingPage({super.key});
   static const appStrings = AppStrings.instance;
 
   @override
-  ConsumerState<LandingPage> createState() => _LandingPageState();
+  ConsumerState<MobileLandingPage> createState() => _LandingPageState();
 }
 
-class _LandingPageState extends ConsumerState<LandingPage>
+class _LandingPageState extends ConsumerState<MobileLandingPage>
     with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.red,
-      ),
-    );
+    return const Scaffold();
   }
 }
