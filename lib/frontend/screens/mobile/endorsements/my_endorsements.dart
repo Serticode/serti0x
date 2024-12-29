@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:serti0x/frontend/screens/mobile/endorsements/widgets/my_endorsement_card_view.dart';
 import 'package:serti0x/frontend/shared/app_colours.dart';
 import 'package:serti0x/frontend/utilities/app_extensions.dart';
@@ -12,7 +11,7 @@ class MyEndorsements extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        "His Vouchers".txt16(
+        "Endorsements".txt16(
           context: context,
           fontWeight: FontWeight.w700,
         ),
@@ -31,7 +30,7 @@ class MyEndorsements extends ConsumerWidget {
 
         //!
         Padding(
-          padding: EdgeInsets.only(left: 120.0.w),
+          padding: const EdgeInsets.only(left: 60.0),
           child: "“"
               .txt(
                 context: context,
@@ -46,7 +45,7 @@ class MyEndorsements extends ConsumerWidget {
 
         //!
         Padding(
-          padding: EdgeInsets.only(right: 120.0.w),
+          padding: const EdgeInsets.only(right: 60.0),
           child: "”"
               .txt(
                 context: context,

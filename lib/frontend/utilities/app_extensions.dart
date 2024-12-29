@@ -3,7 +3,6 @@ import "dart:developer" as dev_tools show log;
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:flutter_animate/flutter_animate.dart";
-import "package:flutter_screenutil/flutter_screenutil.dart";
 import "package:intl/intl.dart";
 import "package:serti0x/frontend/shared/app_colours.dart";
 import "package:serti0x/frontend/shared/app_strings.dart";
@@ -56,21 +55,22 @@ extension IgnorePointerExtension on Widget {
 //! EXTENSIONS ON NUMBER
 extension WidgetExtensions on double {
   Widget get sizedBoxHeight => SizedBox(
-        height: h,
+        height: this,
       );
 
   Widget get sizedBoxWidth => SizedBox(
-        width: w,
+        width: this,
       );
 
-  EdgeInsetsGeometry get verticalPadding => EdgeInsets.symmetric(vertical: h);
+  EdgeInsetsGeometry get verticalPadding =>
+      EdgeInsets.symmetric(vertical: this);
 
   EdgeInsetsGeometry get horizontalPadding =>
-      EdgeInsets.symmetric(horizontal: w);
+      EdgeInsets.symmetric(horizontal: this);
 
   EdgeInsetsGeometry get symmetricPadding => EdgeInsets.symmetric(
-        vertical: h,
-        horizontal: w,
+        vertical: this,
+        horizontal: this,
       );
 }
 
@@ -78,23 +78,23 @@ extension WidgetExtensions on double {
 //! PADDING EXTENSION ON WIDGET
 extension PaddingExtension on Widget {
   Widget get generalHorizontalPadding => Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 21.0.w,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 21.0,
         ),
         child: this,
       );
 
   Widget get generalVerticalPadding => Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: 12.h,
+        padding: const EdgeInsets.symmetric(
+          vertical: 12,
         ),
         child: this,
       );
 
   Widget get generalPadding => Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: 32.0.h,
-          horizontal: 120.0.w,
+        padding: const EdgeInsets.symmetric(
+          vertical: 32.0,
+          horizontal: 120.0,
         ),
         child: this,
       );
@@ -408,38 +408,6 @@ extension InkWellExtension on Widget {
           onHover(value: value);
         }
       },
-      /* (value) {
-        /* if (onHover != null) {
-          onHover(value: value);
-        } */
-
-        //onHover?.call(value: value);
-
-        if (tooltipMessage != null) {
-          final tooltip = Tooltip(
-            message: tooltipMessage,
-            child: const SizedBox.shrink(),
-          );
-
-          final overlay = OverlayEntry(
-            builder: (context) => Positioned(
-              top: 0,
-              left: 0,
-              child: Material(
-                color: Colors.transparent,
-                elevation: 40,
-                child: tooltip,
-              ),
-            ),
-          );
-
-          if (value && context != null) {
-            Overlay.of(context).insert(overlay);
-          } else {
-            overlay.remove();
-          }
-        }
-      }, */
       onDoubleTap: onDoubleTap,
       onLongPress: onLongPress,
       borderRadius: borderRadius ?? BorderRadius.circular(12),

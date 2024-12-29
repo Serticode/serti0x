@@ -19,7 +19,6 @@ dependencies:
 
   #! ALL UTILS
   intl: ^0.19.0
-  flutter_screenutil: ^5.8.3
   flutter_svg_provider: ^1.0.7
 
   #! ANIMATIONS
