@@ -48,27 +48,20 @@ class Serti0x extends ConsumerWidget {
           builder: (context, constraints) {
             constraints.maxWidth.log();
 
-            return switch (constraints.maxWidth <= 1150) {
-              ///
-              /// Mobile view
-              true => MaterialApp(
-                  title: appStrings.appName,
-                  debugShowCheckedModeBanner: false,
-                  theme: appTheme,
-                  home: const MobileLandingPage(),
-                ),
+            return MaterialApp(
+              title: appStrings.appName,
+              debugShowCheckedModeBanner: false,
+              theme: appTheme,
+              home: switch (constraints.maxWidth <= 1150) {
+                ///
+                /// Mobile view
+                true => const MobileLandingPage(),
 
-              ///
-              /// Desktop view
-              false => MaterialApp(
-                  title: appStrings.appName,
-                  debugShowCheckedModeBanner: false,
-                  theme: appTheme,
-                  home: const Scaffold(
-                    backgroundColor: Colors.purple,
-                  ),
-                ),
-            };
+                ///
+                /// Desktop view
+                false => const Scaffold(backgroundColor: Colors.purple),
+              },
+            );
           },
         );
       },

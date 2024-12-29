@@ -10,7 +10,7 @@ final themeNotifierProvider =
 });
 
 class ThemeNotifier extends StateNotifier<ThemeData> {
-  ThemeNotifier() : super(AppTheme.instance.darkTheme) {
+  ThemeNotifier() : super(appTheme.darkTheme) {
     _loadTheme();
   }
 
@@ -18,13 +18,13 @@ class ThemeNotifier extends StateNotifier<ThemeData> {
 
   Future<void> toggleTheme() async {
     if (state.brightness == Brightness.dark) {
-      state = AppTheme.instance.lightTheme;
+      state = appTheme.lightTheme;
 
       await _saveThemeToPreferences(
         isDarkMode: false,
       );
     } else {
-      state = AppTheme.instance.darkTheme;
+      state = appTheme.darkTheme;
 
       await _saveThemeToPreferences(
         isDarkMode: true,
@@ -42,7 +42,6 @@ class ThemeNotifier extends StateNotifier<ThemeData> {
   Future<void> _loadTheme() async {
     final themePreferences = await SharedPreferences.getInstance();
     final isDarkMode = themePreferences.getBool(_appThemeKey) ?? true;
-    state =
-        isDarkMode ? AppTheme.instance.darkTheme : AppTheme.instance.lightTheme;
+    state = isDarkMode ? appTheme.darkTheme : appTheme.lightTheme;
   }
 }

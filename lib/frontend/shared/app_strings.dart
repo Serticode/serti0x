@@ -26,6 +26,9 @@ class AppStrings {
   final String codeLogo = "codeLogo";
   final String menuIcon = "menuIcon";
   final String gridIcon = "gridIcon";
+  final String slackIcon = "slack";
+  final String emailIcon = "send_email";
+  final String personalCardIcon = "personal_card";
 
   //!
   //!
@@ -46,4 +49,7 @@ class AppStrings {
   final String articles = "Articles.";
   final String articlesRider =
       "Here in goes all articles I've written, \nI hope you learn something. 🙈";
+  final String contactMeUsingTheAbove = "Contact me by using the buttons above";
+  final String copyrightStatement =
+      "Copyright Ⓒ 2025 All rights reserved \nSerticode's Portfolio";
 }
