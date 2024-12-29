@@ -22,13 +22,13 @@ class FooterSocialsItemWidget extends ConsumerWidget {
     final theme = ref.watch(themeNotifierProvider);
 
     return CircleAvatar(
-      radius: 32.0,
+      radius: 24.0,
       backgroundColor: switch (theme == appTheme.darkTheme) {
         true => appColours.secondaryBlack,
         false => appColours.grey700,
       },
       child: CircleAvatar(
-        radius: 24.0,
+        radius: 16.0,
         backgroundColor: switch (theme == appTheme.darkTheme) {
           true => appColours.grey700,
           false => appColours.white,

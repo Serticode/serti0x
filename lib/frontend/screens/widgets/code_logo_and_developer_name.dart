@@ -42,7 +42,10 @@ class CodeLogoAndDeveloperName extends ConsumerWidget {
         //
         16.0.sizedBoxHeight,
 
-        appStrings.developerName.txt24(context: context),
+        appStrings.developerName.txt16(
+          context: context,
+          fontWeight: FontWeight.w600,
+        ),
       ],
     );
   }

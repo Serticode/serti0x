@@ -107,7 +107,7 @@ extension ImagePath on String {
   String get jpg => "assets/images/$this.jpg";
   String get jpeg => "assets/images/$this.jpeg";
   String get gif => "assets/images/$this.gif";
-  String get svg => "icons/$this.svg";
+  String get svg => "assets/icons/$this.svg";
 }
 
 extension StringCasingExtension on String {
@@ -233,8 +233,8 @@ extension StyledTextExtension on String {
                     : appColours.secondaryBlack),
             fontWeight: fontWeight ??
                 (Theme.of(context).brightness == Brightness.dark
-                    ? FontWeight.w500
-                    : FontWeight.w600),
+                    ? FontWeight.w400
+                    : FontWeight.w500),
             fontFamily: appStrings.fontFamily,
             fontStyle: fontStyle,
             decoration: decoration,
@@ -269,8 +269,8 @@ extension StyledTextExtension on String {
                 : appColours.secondaryBlack),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
-                ? FontWeight.w500
-                : FontWeight.w600),
+                ? FontWeight.w400
+                : FontWeight.w500),
         fontFamily: appStrings.fontFamily,
         fontStyle: fontStyle,
         decoration: decoration,
@@ -305,8 +305,8 @@ extension StyledTextExtension on String {
                 : appColours.secondaryBlack),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
-                ? FontWeight.w500
-                : FontWeight.w600),
+                ? FontWeight.w400
+                : FontWeight.w500),
         fontFamily: appStrings.fontFamily,
         fontStyle: fontStyle,
         decoration: decoration,
@@ -340,8 +340,8 @@ extension StyledTextExtension on String {
                 : appColours.secondaryBlack),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
-                ? FontWeight.w500
-                : FontWeight.w600),
+                ? FontWeight.w400
+                : FontWeight.w500),
         fontFamily: appStrings.fontFamily,
         fontStyle: fontStyle,
         decoration: decoration,
@@ -375,8 +375,8 @@ extension StyledTextExtension on String {
                 : appColours.secondaryBlack),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
-                ? FontWeight.w500
-                : FontWeight.w600),
+                ? FontWeight.w400
+                : FontWeight.w500),
         fontFamily: appStrings.fontFamily,
         fontStyle: fontStyle,
         decoration: decoration,

@@ -19,43 +19,39 @@ class EndorsementCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
+    return Column(
+      children: [
+        EndorsementUserImage(
+          endorsementUserImageURL: endorsementUserImageURL,
+        ),
 
-      //!
-      child: Column(
-        children: [
-          EndorsementUserImage(
-            endorsementUserImageURL: endorsementUserImageURL,
-          ),
+        32.0.sizedBoxHeight,
 
-          32.0.sizedBoxHeight,
+        //!
+        endorsementTitle.txt14(
+          context: context,
+          color: appColours.peach,
+          fontWeight: FontWeight.w500,
+        ),
 
-          //!
-          endorsementTitle.txt12(
-            context: context,
-            color: appColours.grey600,
-          ),
+        40.0.sizedBoxHeight,
 
-          32.0.sizedBoxHeight,
+        //!
+        endorsementBody.txt14(
+          context: context,
+          fontWeight: FontWeight.w600,
+          textAlign: TextAlign.center,
+        ),
 
-          //!
-          endorsementBody.txt14(
-            context: context,
-            fontWeight: FontWeight.w500,
-            textAlign: TextAlign.center,
-          ),
+        40.0.sizedBoxHeight,
 
-          32.0.sizedBoxHeight,
-
-          //!
-          endorsementUserNameAndCareerDetails.txt12(
-            context: context,
-            textAlign: TextAlign.center,
-            color: appColours.grey600,
-          ),
-        ],
-      ),
+        //!
+        endorsementUserNameAndCareerDetails.txt14(
+          context: context,
+          textAlign: TextAlign.center,
+          color: appColours.grey600,
+        ),
+      ],
     );
   }
 }

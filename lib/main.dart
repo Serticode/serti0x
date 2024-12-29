@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:serti0x/firebase_options.dart';
 import 'package:serti0x/frontend/screens/mobile/landing_page/mobile_landing_page.dart';
-import 'package:serti0x/frontend/services/crash_reporter/app_crash_reporter.dart';
 import 'package:serti0x/frontend/shared/app_strings.dart';
 import 'package:serti0x/frontend/theme/theme_state_and_provider.dart';
 import 'package:serti0x/frontend/utilities/app_extensions.dart';
@@ -25,7 +24,6 @@ Future<void> main() async {
   );
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  //await appCrashReporter.initializeCrashReporting();
 
   runApp(
     const ProviderScope(
@@ -41,7 +39,7 @@ class Serti0x extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appTheme = ref.watch(themeNotifierProvider);
+    final appTheme = ref.read(themeNotifierProvider);
 
     return ScreenUtilInit(
       minTextAdapt: true,

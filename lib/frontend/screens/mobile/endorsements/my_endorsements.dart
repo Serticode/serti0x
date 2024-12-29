@@ -12,14 +12,18 @@ class MyEndorsements extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        "His Vouchers".txt24(context: context),
+        "His Vouchers".txt16(
+          context: context,
+          fontWeight: FontWeight.w700,
+        ),
 
         8.0.sizedBoxHeight,
 
         //!
-        "What some of his peers say about him".txt16(
+        "What some of his peers say about him".txt12(
           context: context,
           color: appColours.grey700,
+          fontWeight: FontWeight.w500,
         ),
 
         //!
@@ -33,6 +37,7 @@ class MyEndorsements extends ConsumerWidget {
                 context: context,
                 fontSize: 56.0,
                 fontWeight: FontWeight.w700,
+                color: appColours.peach,
               )
               .alignCenterLeft(),
         ),
@@ -47,6 +52,7 @@ class MyEndorsements extends ConsumerWidget {
                 context: context,
                 fontSize: 56.0,
                 fontWeight: FontWeight.w700,
+                color: appColours.peach,
               )
               .alignCenterRight(),
         )
