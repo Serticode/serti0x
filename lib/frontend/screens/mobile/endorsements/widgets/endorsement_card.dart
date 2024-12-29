@@ -27,7 +27,7 @@ class EndorsementCard extends StatelessWidget {
         ),
 
         //!
-        endorsementTitle.txt14(
+        endorsementTitle.txt12(
           context: context,
           color: appColours.peach,
           fontWeight: FontWeight.w500,
@@ -35,7 +35,7 @@ class EndorsementCard extends StatelessWidget {
 
         //!
         endorsementBody
-            .txt12(
+            .txt14(
               context: context,
               fontWeight: FontWeight.w500,
               textAlign: TextAlign.center,

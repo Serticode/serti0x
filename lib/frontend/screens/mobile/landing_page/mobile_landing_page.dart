@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:serti0x/frontend/screens/mobile/briefing/briefing_page.dart';
 import 'package:serti0x/frontend/screens/mobile/code_journey_timeline/code_journey_timeline.dart';
 import 'package:serti0x/frontend/screens/mobile/development_philosophy/development_philosophy.dart';
 import 'package:serti0x/frontend/screens/mobile/endorsements/my_endorsements.dart';
 import 'package:serti0x/frontend/screens/mobile/engineering_challenges/engineering_challenges_corner.dart';
-import 'package:serti0x/frontend/screens/mobile/footer/mobile_footer.dart';
+import 'package:serti0x/frontend/screens/mobile/landing_page/controller/mobile_landing_page_controller.dart';
 import 'package:serti0x/frontend/screens/mobile/open_source_contributions/open_source_contributions.dart';
 import 'package:serti0x/frontend/screens/mobile/professional_growth/professional_growth.dart';
 import 'package:serti0x/frontend/screens/mobile/projects/projects.dart';
 import 'package:serti0x/frontend/screens/mobile/tech_stack/tech_stack.dart';
 import 'package:serti0x/frontend/screens/mobile/technical_writing/technical_writing.dart';
-import 'package:serti0x/frontend/utilities/app_extensions.dart';
 
 ///
 /// These are the details of how the layout should be.
@@ -36,68 +36,26 @@ class MobileLandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        physics: const BouncingScrollPhysics(),
-        children: [
-          const BriefingPage(),
+    return Scaffold(body: Consumer(
+      builder: (context, ref, child) {
+        final listOfSections = ref
+            .read(mobileLandingPageControllerNotifierProvider)
+            .landingPageSections;
 
-          /* //!
-          80.0.sizedBoxHeight,
+        return ListView.builder(
+          itemCount: listOfSections.length,
+          physics: const BouncingScrollPhysics(),
+          padding: EdgeInsets.zero,
+          itemBuilder: (context, index) {
+            return listOfSections.elementAt(index);
+          },
+        );
+      },
+    )
 
-          const CodeJourneyTimeline(),
-
-          //!
-          80.0.sizedBoxHeight,
-
-          const TechStack(),
-
-          //!
-          80.0.sizedBoxHeight,
-
-          const Projects(),
-
-          //!
-          80.0.sizedBoxHeight,
-
-          const DevelopmentPhilosophy(),
-
-          //!
-          80.0.sizedBoxHeight,
-
-          const EngineeringChallengesCorner(),
-
-          //!
-          80.0.sizedBoxHeight,
-
-          const OpenSourceContributions(),
-
-          //!
-          80.0.sizedBoxHeight,
-
-          const TechnicalWriting(),
-
-          //!
-          80.0.sizedBoxHeight,
-
-          const ProfessionalGrowth(), */
-
-          //!
-          80.0.sizedBoxHeight,
-
-          const MyEndorsements(),
-
-          //!
-          80.0.sizedBoxHeight,
-
-          //!
-          const MobileFooter(),
-        ],
-      ),
-
-      //!
-      /// Closed out for now, might support light mode later
-      /* floatingActionButton: FloatingActionButton(
+        //!
+        /// Closed out for now, might support light mode later
+        /* floatingActionButton: FloatingActionButton(
         onPressed: () async => await themeNotifier.toggleTheme(),
         child: SvgPicture.asset(
           switch (theme == appTheme.darkTheme) {
@@ -110,6 +68,6 @@ class MobileLandingPage extends StatelessWidget {
           },
         ),
       ), */
-    );
+        );
   }
 }
