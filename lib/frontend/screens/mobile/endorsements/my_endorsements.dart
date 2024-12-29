@@ -11,9 +11,10 @@ class MyEndorsements extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        "Endorsements".txt16(
+        "Endorsements".txt24(
           context: context,
           fontWeight: FontWeight.w700,
+          color: appColours.peach,
         ),
 
         8.0.sizedBoxHeight,
@@ -21,8 +22,7 @@ class MyEndorsements extends ConsumerWidget {
         //!
         "What some of his peers say about him".txt12(
           context: context,
-          color: appColours.grey700,
-          fontWeight: FontWeight.w500,
+          color: appColours.grey600,
         ),
 
         //!
