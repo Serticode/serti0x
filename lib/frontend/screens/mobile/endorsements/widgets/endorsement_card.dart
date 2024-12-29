@@ -20,12 +20,11 @@ class EndorsementCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         EndorsementUserImage(
           endorsementUserImageURL: endorsementUserImageURL,
         ),
-
-        32.0.sizedBoxHeight,
 
         //!
         endorsementTitle.txt14(
@@ -34,23 +33,25 @@ class EndorsementCard extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
 
-        40.0.sizedBoxHeight,
+        //!
+        endorsementBody
+            .txt12(
+              context: context,
+              fontWeight: FontWeight.w500,
+              textAlign: TextAlign.center,
+            )
+            .fadeInFromBottom(),
 
         //!
-        endorsementBody.txt14(
-          context: context,
-          fontWeight: FontWeight.w600,
-          textAlign: TextAlign.center,
-        ),
-
-        40.0.sizedBoxHeight,
-
-        //!
-        endorsementUserNameAndCareerDetails.txt14(
-          context: context,
-          textAlign: TextAlign.center,
-          color: appColours.grey600,
-        ),
+        endorsementUserNameAndCareerDetails
+            .txt12(
+              context: context,
+              textAlign: TextAlign.center,
+              color: appColours.grey600,
+            )
+            .fadeInFromBottom(
+              delay: const Duration(milliseconds: 400),
+            ),
       ],
     );
   }

@@ -172,7 +172,7 @@ extension WidgetAnimation on Widget {
     AnimationController? controller,
   }) =>
       animate(
-        delay: delay ?? 600.ms,
+        delay: delay ?? 200.ms,
         controller: controller,
       )
           .move(
@@ -180,7 +180,7 @@ extension WidgetAnimation on Widget {
             begin: offset ?? const Offset(0, 10),
           )
           .fade(
-            duration: animationDuration ?? 300.ms,
+            duration: animationDuration ?? 400.ms,
             curve: Curves.fastOutSlowIn,
           );
 

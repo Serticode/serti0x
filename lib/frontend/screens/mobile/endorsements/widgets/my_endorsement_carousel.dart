@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:serti0x/frontend/screens/mobile/endorsements/controller/endorsements_controller.dart';
 import 'package:serti0x/frontend/screens/mobile/endorsements/widgets/endorsement_card.dart';
 import 'package:serti0x/frontend/shared/app_colours.dart';
+import 'package:serti0x/frontend/utilities/app_extensions.dart';
 
-class MyEndorsementCardView extends StatelessWidget {
-  const MyEndorsementCardView({
+class MyEndorsementCarousel extends StatelessWidget {
+  const MyEndorsementCarousel({
     this.enums = MyEndorsementsEnum.values,
     super.key,
   });
@@ -21,7 +22,8 @@ class MyEndorsementCardView extends StatelessWidget {
           itemCount: enums.length,
           disableGesture: true,
           options: CarouselOptions(
-            aspectRatio: 4 / 5,
+            aspectRatio: 4 / 3,
+            viewportFraction: 0.9,
             autoPlay: true,
             enlargeCenterPage: true,
             scrollPhysics: const NeverScrollableScrollPhysics(),
@@ -42,6 +44,8 @@ class MyEndorsementCardView extends StatelessWidget {
             );
           },
         ),
+
+        24.0.sizedBoxHeight,
 
         //!
         ValueListenableBuilder(
