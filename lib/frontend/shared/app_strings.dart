@@ -49,7 +49,7 @@ class AppStrings {
   final String articles = "Articles.";
   final String articlesRider =
       "Here in goes all articles I've written, \nI hope you learn something. 🙈";
-  final String contactMeUsingTheAbove = "Contact me by using the buttons above";
+  final String contactMeUsingTheAbove = "Contact me by using the options above";
   final String copyrightStatement =
       "Copyright Ⓒ 2025 All rights reserved \nSerticode's Portfolio";
 }

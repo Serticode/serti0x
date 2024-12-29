@@ -42,14 +42,12 @@ class MobileFooter extends ConsumerWidget {
 
         40.0.sizedBoxHeight,
 
-        appStrings.copyrightStatement
-            .txt12(
-              context: context,
-              textAlign: TextAlign.center,
-            )
-            .alignCenter(),
+        appStrings.copyrightStatement.txt12(
+          context: context,
+          textAlign: TextAlign.center,
+        ),
 
-        80.0.sizedBoxHeight,
+        40.0.sizedBoxHeight,
       ],
     );
   }

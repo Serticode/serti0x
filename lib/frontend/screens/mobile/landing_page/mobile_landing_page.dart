@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:serti0x/frontend/screens/mobile/endorsements/my_endorsements.dart';
 import 'package:serti0x/frontend/screens/mobile/footer/mobile_footer.dart';
 import 'package:serti0x/frontend/shared/app_colours.dart';
 import 'package:serti0x/frontend/shared/app_strings.dart';
@@ -18,9 +19,24 @@ class MobileLandingPage extends ConsumerWidget {
     final themeNotifier = ref.read(themeNotifierProvider.notifier);
 
     return Scaffold(
-      body: const MobileFooter(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            //!
+            80.0.sizedBoxHeight,
 
-      ///
+            const MyEndorsements(),
+
+            //!
+            80.0.sizedBoxHeight,
+
+            //!
+            const MobileFooter(),
+          ],
+        ),
+      ),
+
+      //!
       floatingActionButton: FloatingActionButton(
         onPressed: () async => await themeNotifier.toggleTheme(),
         child: SvgPicture.asset(
