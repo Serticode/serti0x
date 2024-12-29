@@ -8,8 +8,6 @@ import "package:intl/intl.dart";
 import "package:serti0x/frontend/shared/app_colours.dart";
 import "package:serti0x/frontend/shared/app_strings.dart";
 
-const appStrings = AppStrings.instance;
-
 //!
 //! LOG EXTENSION - THIS HELPS TO CALL A .log() ON ANY OBJECT
 //! checks if the app in is debug mode first.
@@ -231,8 +229,8 @@ extension StyledTextExtension on String {
             letterSpacing: 1.5,
             color: color ??
                 (Theme.of(context).brightness == Brightness.dark
-                    ? AppColours.instance.grey300
-                    : AppColours.instance.grey700),
+                    ? appColours.grey200
+                    : appColours.secondaryBlack),
             fontWeight: fontWeight ??
                 (Theme.of(context).brightness == Brightness.dark
                     ? FontWeight.w500
@@ -267,8 +265,8 @@ extension StyledTextExtension on String {
         letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
-                ? AppColours.instance.grey300
-                : AppColours.instance.grey700),
+                ? appColours.grey200
+                : appColours.secondaryBlack),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
                 ? FontWeight.w500
@@ -303,8 +301,8 @@ extension StyledTextExtension on String {
         letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
-                ? AppColours.instance.grey300
-                : AppColours.instance.grey700),
+                ? appColours.grey200
+                : appColours.secondaryBlack),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
                 ? FontWeight.w500
@@ -338,8 +336,8 @@ extension StyledTextExtension on String {
         letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
-                ? AppColours.instance.grey300
-                : AppColours.instance.grey700),
+                ? appColours.grey200
+                : appColours.secondaryBlack),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
                 ? FontWeight.w500
@@ -373,8 +371,8 @@ extension StyledTextExtension on String {
         letterSpacing: 1.5,
         color: color ??
             (Theme.of(context).brightness == Brightness.dark
-                ? AppColours.instance.grey300
-                : AppColours.instance.grey700),
+                ? appColours.grey200
+                : appColours.secondaryBlack),
         fontWeight: fontWeight ??
             (Theme.of(context).brightness == Brightness.dark
                 ? FontWeight.w500

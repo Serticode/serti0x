@@ -1,6 +1,9 @@
+final appStrings = AppStrings();
+
 class AppStrings {
-  const AppStrings._privateConstructor();
-  static const AppStrings instance = AppStrings._privateConstructor();
+  factory AppStrings() => singleInstance;
+  AppStrings._internal();
+  static final AppStrings singleInstance = AppStrings._internal();
 
   //! FOR THE DEV
   final String appName = "Serti0x";
@@ -23,6 +26,9 @@ class AppStrings {
   final String codeLogo = "codeLogo";
   final String menuIcon = "menuIcon";
   final String gridIcon = "gridIcon";
+  final String slackIcon = "slack";
+  final String emailIcon = "send_email";
+  final String personalCardIcon = "personal_card";
 
   //!
   //!
@@ -43,4 +49,7 @@ class AppStrings {
   final String articles = "Articles.";
   final String articlesRider =
       "Here in goes all articles I've written, \nI hope you learn something. 🙈";
+  final String contactMeUsingTheAbove = "Contact me by using the options above";
+  final String copyrightStatement =
+      "Copyright Ⓒ 2025 All rights reserved \nSerticode's Portfolio";
 }

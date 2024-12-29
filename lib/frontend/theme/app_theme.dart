@@ -3,10 +3,12 @@ import 'package:serti0x/frontend/shared/app_colours.dart';
 import 'package:serti0x/frontend/shared/app_strings.dart';
 import 'fade_transition.dart';
 
+final appTheme = AppTheme();
+
 class AppTheme {
-  AppTheme._privateConstructor();
-  static AppTheme instance = AppTheme._privateConstructor();
-  static const appStrings = AppStrings.instance;
+  factory AppTheme() => singleInstance;
+  AppTheme._internal();
+  static final AppTheme singleInstance = AppTheme._internal();
 
   //!
   //!
@@ -21,13 +23,17 @@ class AppTheme {
     }),
 
     //!
-    scaffoldBackgroundColor: AppColours.instance.black,
+    scaffoldBackgroundColor: appColours.black,
 
     //! FONT FAMILY
     fontFamily: appStrings.fontFamily,
 
     //!
     useMaterial3: false,
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: appColours.fabBGColourDark,
+      elevation: 40.0,
+    ),
   );
 
   //!
@@ -43,12 +49,16 @@ class AppTheme {
     }),
 
     //!
-    scaffoldBackgroundColor: AppColours.instance.white,
+    scaffoldBackgroundColor: appColours.grey50,
 
     //! FONT FAMILY
     fontFamily: appStrings.fontFamily,
 
     //!
     useMaterial3: false,
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: appColours.white,
+      elevation: 40.0,
+    ),
   );
 }
