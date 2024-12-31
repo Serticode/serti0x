@@ -1,8 +1,6 @@
 enum MyEndorsementsEnum {
   abraham,
-  david,
-  kuro,
-  einstein;
+  david;
 
   String get title {
     switch (this) {
