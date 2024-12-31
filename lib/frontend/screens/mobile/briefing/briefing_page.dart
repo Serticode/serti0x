@@ -7,6 +7,11 @@ import 'package:serti0x/frontend/utilities/app_extensions.dart';
 class BriefingPage extends ConsumerWidget {
   const BriefingPage({super.key});
 
+  final textStyle = const TextStyle(
+    fontSize: 32.0,
+    fontWeight: FontWeight.w700,
+  );
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
@@ -19,36 +24,86 @@ class BriefingPage extends ConsumerWidget {
         16.0.sizedBoxHeight,
 
         Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child: "Welcome 💐"
+              .txt(
+                context: context,
+                textAlign: TextAlign.center,
+                fontSize: 56.0,
+                fontWeight: FontWeight.w800,
+                color: appColours.bigTextWhite,
+              )
+              .alignCenterLeft(),
+        ).fadeInFromBottom(),
+
+        //!
+        40.0.sizedBoxHeight,
+
+        Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text.rich(
-            style: const TextStyle(
-              fontSize: 32.0,
-              fontWeight: FontWeight.w700,
-            ),
-            textAlign: TextAlign.center,
-            TextSpan(
-              text: "Heyy! 👍 \nI'm ",
-              children: [
-                TextSpan(
-                  text: " Samuel;",
-                  style: TextStyle(
-                    color: appColours.blue,
+          child: Column(
+            children: [
+              "Heyy!  👍"
+                  .txt(
+                    context: context,
+                    textStyle: textStyle,
+                  )
+                  .fadeInFromBottom(),
+
+              //!
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  "I'm  ".txt(
+                    context: context,
+                    textStyle: textStyle,
                   ),
-                ),
-                const TextSpan(
-                  text: "\nYour  ",
-                ),
-                TextSpan(
-                  text: "“UX focused”\n",
-                  style: TextStyle(
-                    color: appColours.blue,
+                  "Samuel;".txt(
+                    context: context,
+                    textStyle: textStyle.copyWith(
+                      color: appColours.blue,
+                    ),
                   ),
+                ],
+              ).fadeInFromBottom(
+                animationDuration: const Duration(
+                  milliseconds: 400,
                 ),
-                const TextSpan(
-                  text: "Software  Engineer 🙈",
+              ),
+
+              //!
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  "Your  ".txt(
+                    context: context,
+                    textStyle: textStyle,
+                  ),
+                  "“UX focused”".txt(
+                    context: context,
+                    textStyle: textStyle.copyWith(
+                      color: appColours.blue,
+                    ),
+                  ),
+                ],
+              ).fadeInFromBottom(
+                animationDuration: const Duration(
+                  milliseconds: 500,
                 ),
-              ],
-            ),
+              ),
+
+              //!
+              "Software  Engineer 🙈"
+                  .txt(
+                    context: context,
+                    textStyle: textStyle,
+                  )
+                  .fadeInFromBottom(
+                    animationDuration: const Duration(
+                      milliseconds: 600,
+                    ),
+                  ),
+            ],
           ),
         ),
 
@@ -65,25 +120,19 @@ class BriefingPage extends ConsumerWidget {
 
         24.0.sizedBoxHeight,
 
-        "Dedicated to crafting intuitive and impactful Software solutions."
-            .txt16(
-          context: context,
-          textAlign: TextAlign.center,
-          color: appColours.grey600,
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child:
+              "Dedicated to crafting intuitive and impactful Software solutions."
+                  .txt16(
+            context: context,
+            textAlign: TextAlign.center,
+            color: appColours.grey600,
+          ),
         ),
 
-        4.0.sizedBoxHeight,
-
-        "Welcome 💐".txt(
-          context: context,
-          textAlign: TextAlign.center,
-          fontSize: 32.0,
-          fontWeight: FontWeight.w700,
-        ),
-
-        //!
         40.0.sizedBoxHeight,
       ],
-    );
+    ).fadeIn();
   }
 }

@@ -11,10 +11,16 @@ class MyEndorsements extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        "Endorsements".txt24(
-          context: context,
-          fontWeight: FontWeight.w700,
-          color: appColours.peach,
+        Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child: "Endorsements."
+              .txt(
+                context: context,
+                fontWeight: FontWeight.w800,
+                fontSize: 56,
+                color: appColours.peach.withOpacity(0.3),
+              )
+              .alignCenterLeft(),
         ),
 
         8.0.sizedBoxHeight,

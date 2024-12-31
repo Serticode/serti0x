@@ -15,6 +15,7 @@ class AppColours {
   final fabBGColourDark = const Color(0XFF171717);
   final secondaryBlack = const Color(0XFF171717);
   final white = const Color(0xFFFFFFFF);
+  final bigTextWhite = Colors.white12;
 
   //! TEXT COLOURS
   final grey50 = Colors.grey.shade50;
