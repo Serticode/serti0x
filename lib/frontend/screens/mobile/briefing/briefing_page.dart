@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:serti0x/frontend/screens/widgets/code_logo.dart';
+import 'package:serti0x/frontend/screens/widgets/section_title_widget.dart';
 import 'package:serti0x/frontend/shared/app_colours.dart';
 import 'package:serti0x/frontend/utilities/app_extensions.dart';
 
@@ -23,17 +24,9 @@ class BriefingPage extends ConsumerWidget {
 
         16.0.sizedBoxHeight,
 
-        Padding(
-          padding: const EdgeInsets.only(left: 16.0),
-          child: "Welcome 💐"
-              .txt(
-                context: context,
-                textAlign: TextAlign.center,
-                fontSize: 56.0,
-                fontWeight: FontWeight.w800,
-                color: appColours.bigTextWhite,
-              )
-              .alignCenterLeft(),
+        SectionTitleWidget(
+          sectionTitle: "Welcome 💐",
+          sectionTitleColour: appColours.bigTextWhite,
         ).fadeInFromBottom(),
 
         //!
