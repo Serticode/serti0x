@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:serti0x/frontend/screens/mobile/briefing/briefing_page.dart';
+import 'package:serti0x/frontend/screens/mobile/code_journey_timeline/code_journey_timeline.dart';
 import 'package:serti0x/frontend/screens/mobile/endorsements/my_endorsements.dart';
 import 'package:serti0x/frontend/screens/mobile/footer/mobile_footer.dart';
 import 'package:serti0x/frontend/utilities/app_extensions.dart';
@@ -14,11 +15,12 @@ class MobileLandingPageControllerNotifier {
   final landingPageSections = <Widget>[
     const BriefingPage(),
 
-    /* //!
-          80.0.sizedBoxHeight,
+    //!
+    80.0.sizedBoxHeight,
 
-          const CodeJourneyTimeline(),
+    const CodeJourneyTimeline(),
 
+    /*
           //!
           80.0.sizedBoxHeight,
 
